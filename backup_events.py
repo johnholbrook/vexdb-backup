@@ -17,8 +17,9 @@ def safe_open_w(path):
     return open(path, 'w')
 
 # get a list of all events
-events = v.getEvents(region="West Virginia", season="Tower Takeover")
-events = v.getEvents(sku="RE-VRC-19-9747")
+# events = v.getEvents(region="West Virginia", season="Tower Takeover")
+# events = v.getEvents(sku="RE-VRC-19-9747")
+events = v.getEvents(get_all=True)
 
 with safe_open_w("events/events.json") as f:
     f.write(json.dumps(events))
